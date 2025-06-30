@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/frtc"
+        android:icon="@drawable/chats"
+        android:title="Задания"/>
+    <item
+        android:id="@+id/frpl"
+        android:icon="@drawable/peoples"
+        android:title="Сотрудники"/>
+    <item
+        android:id="@+id/frsl"
+        android:icon="@drawable/salary"
+        android:title="Зарплата"/>
+    <item
+        android:id="@+id/frpr"
+        android:icon="@drawable/person"
+        android:title="Профиль"/>
+</menu>

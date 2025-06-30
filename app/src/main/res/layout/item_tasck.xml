@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/people_name_tasck"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:text="Полное имя"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tasck_type"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="jqdasdas"
+        app:layout_constraintEnd_toEndOf="@+id/people_name_tasck"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/people_name_tasck"
+        app:layout_constraintTop_toBottomOf="@+id/people_name_tasck" />
+
+    <TextView
+        android:id="@+id/spinner_tasck_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_marginTop="12dp"
+        android:text="Текст задачи"
+        app:layout_constraintEnd_toEndOf="@+id/tasck_type"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="@+id/tasck_type"
+        app:layout_constraintTop_toBottomOf="@+id/tasck_type" />
+
+    <TextView
+        android:id="@+id/date_tasck"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Дата поручения"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_tasck_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner_tasck_text"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_tasck_text" />
+
+    <TextView
+        android:id="@+id/date_tasck_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Дата сдачи"
+        app:layout_constraintEnd_toEndOf="@+id/date_tasck"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/date_tasck"
+        app:layout_constraintTop_toBottomOf="@+id/date_tasck" />
+
+    <Button
+        android:id="@+id/button_tasck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Опции"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/date_tasck_complete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/people_name_tasck"
+        app:layout_constraintVertical_bias="0.538" />
+</androidx.constraintlayout.widget.ConstraintLayout>

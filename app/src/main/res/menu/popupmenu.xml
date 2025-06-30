@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pop_delete"
+        android:title="Удалдить"
+        android:icon="@drawable/trash"
+        android:iconTint="@color/yellow"
+        />
+    <item
+        android:id="@+id/pop_redact"
+        android:title="Редактировать"
+        android:icon="@drawable/redact"
+        android:iconTint="@color/yellow"/>
+
+
+</menu>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "682072923611",
+    "project_id": "testmess-1312m",
+    "storage_bucket": "testmess-1312m.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682072923611:android:3d7e33f8d6a58c43da9bfe",
+        "android_client_info": {
+          "package_name": "com.example.testmess"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANgJ_jIJBJZa1sFJ_UiiypAOfvHcpPqp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

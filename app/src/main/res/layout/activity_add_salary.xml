@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddSalaryActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Добавление выплату"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_salary_button"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Добавить"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/ubuntu_medium"
+
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Spinner
+        android:id="@+id/spinner_type_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_people"
+        android:fontFamily="@font/ubuntu_medium"
+        app:layout_constraintStart_toStartOf="@+id/spinner_people"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_people" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="290dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Дата выплаты"
+        android:textAlignment="center"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="@+id/edit_salary_value"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="@+id/edit_salary_value"
+        app:layout_constraintTop_toBottomOf="@+id/edit_salary_value" />
+
+    <EditText
+        android:id="@+id/edit_salary_value"
+        android:layout_width="281dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:ems="10"
+        android:hint="Размер выплаты"
+        android:textAlignment="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_type_salary"
+        app:layout_constraintStart_toStartOf="@+id/spinner_type_salary"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_type_salary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
