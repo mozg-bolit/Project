@@ -41,6 +41,7 @@ class fragment_peoples : Fragment() {
         datebase = FirebaseDatabase.getInstance()
         peopleRef = FirebaseDatabase.getInstance().getReference("People")
 
+
         setupRecyclerView()
         setupFirebaseListener()
         binding.addPeopleButton.setOnClickListener {

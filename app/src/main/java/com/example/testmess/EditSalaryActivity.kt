@@ -41,6 +41,8 @@ class EditSalaryActivity : AppCompatActivity() {
             return
         }
 
+        binding.button.setOnClickListener { finish() }
+
         setupPeopleSpinner()
         setupSalaryTypeSpinner()
         loadSalaryData()

@@ -4,16 +4,15 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.testmess.EditProfileActivity
 import com.example.testmess.LoginActivty
-import com.example.testmess.MainActivity
-import com.example.testmess.R
 import com.example.testmess.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -27,6 +26,7 @@ class fragment_profile : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private lateinit var sharedPreferences: SharedPreferences
+    private var currentUserId: String = ""
 
     companion object {
         private const val THEME_PREF_KEY = "app_theme"
@@ -39,6 +39,7 @@ class fragment_profile : Fragment() {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
+        currentUserId = auth.currentUser?.uid ?: ""
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
     }
 
@@ -54,18 +55,31 @@ class fragment_profile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Инициализация кнопки выхода
         binding.buttonLogin.setOnClickListener {
             startActivity(Intent(requireActivity(), LoginActivty::class.java))
             requireActivity().finish()
         }
 
-        // Инициализация кнопки смены темы
+        binding.redbutton.setOnClickListener {
+            if (currentUserId.isNotEmpty()) {
+                editProfile(currentUserId)
+            } else {
+                Toast.makeText(requireContext(), "Пользователь не авторизован", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         binding.themeButton.setOnClickListener {
             showThemeSelectionDialog()
         }
 
         loadUserInfo()
+    }
+
+    private fun editProfile(userId: String) {
+        val intent = Intent(requireActivity(), EditProfileActivity::class.java).apply {
+            putExtra("userId", userId)
+        }
+        startActivity(intent)
     }
 
     private fun showThemeSelectionDialog() {
@@ -101,8 +115,6 @@ class fragment_profile : Fragment() {
             THEME_DARK -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
-
-        // Перезапускаем активность для применения темы
         requireActivity().recreate()
     }
 
@@ -113,27 +125,34 @@ class fragment_profile : Fragment() {
             binding.usernameTv.text = "Гость"
             binding.fullName.text = "Пожалуйста, войдите в систему"
         } else {
+            // Удаляем использование SharedPreferences для имени
             database.reference.child("Users").child(currentUser.uid)
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        if (!snapshot.exists()) {
-                            binding.usernameTv.text = "Данные не найдены"
-                            return
+                        if (snapshot.exists()) {
+                            // Всегда загружаем email
+                            val email = snapshot.child("email").getValue(String::class.java) ?: ""
+                            binding.usernameTv.text = email
+
+                            // Всегда загружаем имя из Firebase
+                            val name = snapshot.child("name").getValue(String::class.java) ?: ""
+                            val surname = snapshot.child("surname").getValue(String::class.java) ?: ""
+                            val patronymic = snapshot.child("patronymic").getValue(String::class.java) ?: ""
+
+                            // Форматируем полное имя
+                            binding.fullName.text = surname
+                            binding.pJob.text = name
+                            binding.pSalaryType.text = patronymic
                         }
-
-                        val name = snapshot.child("name").getValue(String::class.java) ?: ""
-                        val surname = snapshot.child("surname").getValue(String::class.java) ?: ""
-                        val patronymic = snapshot.child("patronymic").getValue(String::class.java) ?: ""
-                        val email = snapshot.child("email").getValue(String::class.java) ?: ""
-
-                        binding.usernameTv.text = email
-                        binding.fullName.text = "$surname $name $patronymic"
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        binding.usernameTv.text = "Ошибка загрузки"
+                        Toast.makeText(requireContext(), "Ошибка загрузки данных", Toast.LENGTH_SHORT).show()
                     }
                 })
         }
     }
+
+
 }
+

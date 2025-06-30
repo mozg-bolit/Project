@@ -33,6 +33,7 @@ class EditTasckActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityEditTasckBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.button.setOnClickListener { finish() }
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()

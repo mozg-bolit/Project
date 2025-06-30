@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
-        android:text="Редактировать задачу"
+        android:text="Новая задача"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -24,12 +24,12 @@
         android:id="@+id/add_tasck_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Добавить задачу"
+        android:layout_marginTop="36dp"
         android:backgroundTint="@color/yellow"
+        android:text="Добавить задачу"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/edit_date_tasck_comlete"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/edit_date_tasck_comlete"
         app:layout_constraintTop_toBottomOf="@+id/edit_date_tasck_comlete" />
 
@@ -90,4 +90,18 @@
         app:layout_constraintEnd_toEndOf="@+id/edit_date_tasck"
         app:layout_constraintStart_toStartOf="@+id/edit_date_tasck"
         app:layout_constraintTop_toBottomOf="@+id/edit_date_tasck" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Отмена"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/add_tasck_button"
+        app:layout_constraintStart_toStartOf="@+id/add_tasck_button"
+        app:layout_constraintTop_toBottomOf="@+id/add_tasck_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

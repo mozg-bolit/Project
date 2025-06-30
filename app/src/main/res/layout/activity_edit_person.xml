@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".EditPersonActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="147dp"
-        android:layout_height="109dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/person"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="283dp"
@@ -35,14 +25,14 @@
         android:id="@+id/edit_surname"
         android:layout_width="283dp"
         android:layout_height="43dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/ubuntu_medium"
         android:hint="Фамилия"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/edit_patronumyc"
@@ -63,11 +53,12 @@
         android:layout_width="286dp"
         android:layout_height="41dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/ubuntu_medium"
         android:entries="@array/job"
-        android:textAlignment="center"
+        android:fontFamily="@font/ubuntu_medium"
         android:text="Тип заработной платы:"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/edit_name"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edit_name"
         app:layout_constraintTop_toBottomOf="@+id/edit_patronumyc" />
 
@@ -101,12 +92,12 @@
         android:id="@+id/button_salary_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Обновить"
+        android:layout_marginTop="56dp"
         android:backgroundTint="@color/yellow"
+        android:text="Обновить"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/job"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/job"
         app:layout_constraintTop_toBottomOf="@+id/job" />
 
@@ -123,6 +114,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Отмена"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/button_salary_update"
+        app:layout_constraintStart_toStartOf="@+id/button_salary_update"
+        app:layout_constraintTop_toBottomOf="@+id/button_salary_update" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

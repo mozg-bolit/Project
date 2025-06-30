@@ -27,7 +27,10 @@ class PeopleActivity : AppCompatActivity() {
         binding = ActivityPeopleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bb.setOnClickListener { finish() }
+        binding.bb.setOnClickListener {
+            auth.signOut()
+            finish()
+        }
 
         // Инициализация Firebase
         auth = FirebaseAuth.getInstance()

@@ -7,12 +7,13 @@
     android:id="@+id/frpr"
     tools:context=".Fragments.fragment_profile">
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ImageButton
+        android:id="@+id/imageButt"
         android:layout_width="143dp"
         android:layout_height="115dp"
         android:layout_marginTop="68dp"
         android:src="@drawable/person"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,11 +28,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButt"
+        app:layout_constraintVertical_bias="0.129" />
 
     <TextView
-        android:id="@+id/full_name"
+        android:id="@+id/fullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -50,9 +51,9 @@
         android:text="Должность"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/full_name"
+        app:layout_constraintEnd_toEndOf="@+id/fullName"
         app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="@+id/full_name"
+        app:layout_constraintStart_toStartOf="@+id/fullName"
         app:layout_constraintTop_toBottomOf="@+id/username_tv" />
 
     <TextView
@@ -67,43 +68,40 @@
         app:layout_constraintStart_toStartOf="@+id/p_job"
         app:layout_constraintTop_toBottomOf="@+id/p_job" />
 
-    <TextView
-        android:id="@+id/p_salary_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="ВЗ"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/p_salary_type"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/p_salary_type"
-        app:layout_constraintTop_toBottomOf="@+id/p_salary_type" />
-
     <Button
         android:id="@+id/button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:backgroundTint="#E7DE27"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@color/yellow"
         android:text="Выйти"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/theme_button"
         android:layout_width="248dp"
         android:layout_height="38dp"
-        android:layout_marginTop="12dp"
         android:backgroundTint="@color/white"
         android:text="Тема приложения"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/p_salary_value"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/p_salary_value"
-        app:layout_constraintTop_toBottomOf="@+id/p_salary_value" />
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="454dp" />
+
+    <Button
+        android:id="@+id/redbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        android:text="Редактировать"
+        app:layout_constraintBottom_toTopOf="@+id/button_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

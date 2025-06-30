@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="205dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/ubuntu_medium"
         android:text="Добавление сотрудника"
         android:textAlignment="center"
@@ -24,14 +24,14 @@
         android:id="@+id/edit_pers_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Имя"
         android:fontFamily="@font/ubuntu_medium"
+        android:hint="Имя"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -83,12 +83,13 @@
         android:id="@+id/pers_button"
         android:layout_width="199dp"
         android:layout_height="53dp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#E0C71E"
+        android:fontFamily="@font/ubuntu_medium"
         android:text="Добавить"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/editSalaryValue"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="@+id/editSalaryValue"
         app:layout_constraintTop_toBottomOf="@+id/editSalaryValue" />
 
@@ -149,7 +150,18 @@
         app:layout_constraintStart_toStartOf="@+id/editJob"
         app:layout_constraintTop_toBottomOf="@+id/editJob" />
 
-
-
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Отмена"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/pers_button"
+        app:layout_constraintStart_toStartOf="@+id/pers_button"
+        app:layout_constraintTop_toBottomOf="@+id/pers_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

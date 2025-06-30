@@ -41,6 +41,8 @@ class AddTasckActivity : AppCompatActivity() {
         setupSpinners()
         loadPeopleData()
 
+        binding.button.setOnClickListener { finish() }
+
         binding.addTasckButton.setOnClickListener {
             saveTasck()
         }

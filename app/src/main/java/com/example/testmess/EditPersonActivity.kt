@@ -23,6 +23,8 @@ class EditPersonActivity : AppCompatActivity() {
         binding = ActivityEditPersonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.button.setOnClickListener { finish() }
+
         // Get person ID from Intent
         personId = intent.getStringExtra("personId") ?: ""
         if (personId.isEmpty()) {

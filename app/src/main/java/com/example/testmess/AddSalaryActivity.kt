@@ -36,6 +36,8 @@ class AddSalaryActivity : AppCompatActivity() {
         setupSpinners()
         loadPeopleData()
 
+        binding.button.setOnClickListener { finish() }
+
         binding.addSalaryButton.setOnClickListener {
             savePayment()
         }

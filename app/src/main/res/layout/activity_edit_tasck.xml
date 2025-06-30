@@ -38,7 +38,7 @@
         android:id="@+id/redact_spinner_people"
         android:layout_width="281dp"
         android:layout_height="57dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -88,7 +88,7 @@
         android:id="@+id/button_tasck_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/yellow"
         android:inputType="date"
         android:text="Обновить"
@@ -96,6 +96,20 @@
         app:layout_constraintEnd_toEndOf="@+id/date_complete"
         app:layout_constraintStart_toStartOf="@+id/date_complete"
         app:layout_constraintTop_toBottomOf="@+id/date_complete" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Отмена"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/button_tasck_update"
+        app:layout_constraintStart_toStartOf="@+id/button_tasck_update"
+        app:layout_constraintTop_toBottomOf="@+id/button_tasck_update" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

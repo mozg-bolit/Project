@@ -2,7 +2,6 @@ package com.example.testmess
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -35,9 +34,8 @@ class LoginActivty : AppCompatActivity() {
         binding.logButton.setOnClickListener {
             performLogin()
         }
-
         binding.regText.setOnClickListener {
-            startActivity(Intent(this, RegusterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 
@@ -49,7 +47,6 @@ class LoginActivty : AppCompatActivity() {
             Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show()
             return
         }
-
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
@@ -68,8 +65,6 @@ class LoginActivty : AppCompatActivity() {
 
     private fun checkUserRole() {
         val currentUser = auth.currentUser ?: return
-
-
         database.child("Users").child(currentUser.uid)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -91,7 +86,6 @@ class LoginActivty : AppCompatActivity() {
     }
 
     private fun checkInPeopleBranch(uid: String) {
-
         database.child("People").child(uid)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -114,13 +108,11 @@ class LoginActivty : AppCompatActivity() {
                 }
             })
     }
-
     private fun redirectBasedOnRole(role: String) {
         val intent = when (role) {
             "employee" -> Intent(this, PeopleActivity::class.java)
             else -> Intent(this, MainActivity::class.java)
         }
-
         // Запускаем новую задачу и очищаем стек
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)

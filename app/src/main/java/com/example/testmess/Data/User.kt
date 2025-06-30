@@ -1,6 +1,7 @@
 package com.example.testmess.Data
 
 data class User(
+    var id: String = "",
     val userId: String,
     val email: String,
     val password: String,

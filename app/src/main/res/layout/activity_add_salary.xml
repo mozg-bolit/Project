@@ -24,25 +24,25 @@
     <Button
         android:id="@+id/add_salary_button"
         android:layout_width="wrap_content"
-        android:fontFamily="@font/ubuntu_medium"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="172dp"
         android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/ubuntu_medium"
         android:text="Добавить"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_people"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:textAlignment="center"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/ubuntu_medium"
+        android:textAlignment="center"
 
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -88,5 +88,19 @@
         app:layout_constraintEnd_toEndOf="@+id/spinner_type_salary"
         app:layout_constraintStart_toStartOf="@+id/spinner_type_salary"
         app:layout_constraintTop_toBottomOf="@+id/spinner_type_salary" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Отмена"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/add_salary_button"
+        app:layout_constraintStart_toStartOf="@+id/add_salary_button"
+        app:layout_constraintTop_toBottomOf="@+id/add_salary_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

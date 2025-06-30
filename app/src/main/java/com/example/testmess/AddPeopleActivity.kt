@@ -31,12 +31,14 @@ class AddPeopleActivity : AppCompatActivity() {
         binding = ActivityAddPeopleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
         // Получаем данные текущего пользователя
         val currentUser = auth.currentUser
         employerEmail = currentUser?.email
+        binding.button.setOnClickListener { finish() }
 
         // Запрашиваем пароль работодателя
         showPasswordDialog()
